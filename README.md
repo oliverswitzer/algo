@@ -1,5 +1,13 @@
 # Algo VPN
 
+## Deploying VPN and tailing dnscrypt-proxy query log
+
+`./algo`
+
+`ssh  ssh -F configs/<Ago IP Address>/ssh_config `
+
+`tail -f /var/log/dnscrypt-proxy/query.log`
+
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40AlgoVPN)](https://twitter.com/AlgoVPN)
 [![](https://github.com/trailofbits/algo/workflows/Main/badge.svg?branch=master)](https://github.com/trailofbits/algo/actions)
 
