@@ -25,21 +25,21 @@
     state: present
     update_cache: true
 
-- block:
-  - name: Ubuntu | Configure AppArmor policy for dnscrypt-proxy
-    copy:
-      src: apparmor.profile.dnscrypt-proxy
-      dest: /etc/apparmor.d/usr.bin.dnscrypt-proxy
-      owner: root
-      group: root
-      mode: 0600
-    notify: restart dnscrypt-proxy
-
-  - name: Ubuntu | Enforce the dnscrypt-proxy AppArmor policy
-    command: aa-enforce usr.bin.dnscrypt-proxy
-    changed_when: false
-  tags: apparmor
-  when: apparmor_enabled|default(false)|bool
+#- block:
+#  - name: Ubuntu | Configure AppArmor policy for dnscrypt-proxy
+#    copy:
+#      src: apparmor.profile.dnscrypt-proxy
+#      dest: /etc/apparmor.d/usr.bin.dnscrypt-proxy
+#      owner: root
+#      group: root
+#      mode: 0600
+#    notify: restart dnscrypt-proxy
+#
+#  - name: Ubuntu | Enforce the dnscrypt-proxy AppArmor policy
+#    command: aa-enforce usr.bin.dnscrypt-proxy
+#    changed_when: false
+#  tags: apparmor
+#  when: apparmor_enabled|default(false)|bool
 
 - name: Ubuntu | Ensure that the dnscrypt-proxy service directory exist
   file:
